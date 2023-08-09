@@ -3,34 +3,34 @@ import GoogleLogo from "./googlelogo_light_color_272x92dp.png";
 import { useState } from "react";
 
 export default function App() {
-  const [message, setMessage] = useState('');
+  const [textSearch, setTextSearch] = useState('');
 
   const handleChange = event => {
-    setMessage(event.target.value);
+    setTextSearch(event.target.value);
   }
 
   const handleClick = () => {
-    window.location.replace('https://www.google.com/search?q=' + message);
+    window.location.replace('https://www.google.com/search?q=' + textSearch);
   };
     
   return (
-    <div className="flex relative flex-col w-screen h-screen bg-background1">
-      <div className="flex relative bg-red-200 w-full h-16 p-2">
-        <div className="flex relative justify-end bg-red-700 w-full items-center">
-          <div className="flex pl-8 pr-1 h-12 gap-1">
-            <div className="flex justify-center items-center">
-              <div className="flex justify-center items-center pr-4">
-                <a href="/" className="text-xs text-text-white justify-center hover:underline pl-4">Gmail</a>
-                <a href="/" className="text-xs text-text-white justify-center hover:underline pl-4">Images</a>
+    <div className="relative flex flex-col w-screen h-screen bg-background1">
+      <div className="relative flex w-full h-16 p-2 bg-red-200">
+        <div className="relative flex items-center justify-end w-full bg-red-700">
+          <div className="flex h-12 gap-1 pl-8 pr-1">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center pr-4">
+                <a href="/" className="justify-center pl-4 text-xs text-text-white hover:underline">Gmail</a>
+                <a href="/" className="justify-center pl-4 text-xs text-text-white hover:underline">Images</a>
               </div>
             </div>
-            <div className="flex flex-row justify-center items-center">
-              <button className="w-10 h-10 text-text-grey flex flex-row justify-center items-center">
+            <div className="flex flex-row items-center justify-center">
+              <button className="flex flex-row items-center justify-center w-10 h-10 text-text-grey">
                 <span class="material-symbols-outlined">
                   apps
                 </span>
               </button>
-              <button className="w-10 h-10 text-text-white flex flex-row justify-center items-center">
+              <button className="flex flex-row items-center justify-center w-10 h-10 text-text-white">
                 <span class="material-symbols-outlined">
                   account_circle
                 </span>
@@ -39,37 +39,36 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="h-72 w-screen flex justify-center items-end">
+      <div className="flex items-end justify-center w-screen h-72">
         <img src={GoogleLogo} alt="googlelogo_light_color_272x92dp" className="h-24">
         </img>
       </div>
-      <div className="flex relative flex-col w-screen h-40 items-center p-5 gap-4">
-        <div className="relative h-11 w-1/3 rounded-full border border-text-grey resize-none bg-background1 p-2 px-12">
+      <div className="relative flex flex-col items-center w-screen h-40 gap-4 p-5">
+        <div className="relative w-1/3 p-2 px-12 border rounded-full resize-none h-11 border-text-grey bg-background1 hover:bg-button-color">
           <span class="material-symbols-outlined absolute left-3 text-text-white">
             search
           </span>
-          <input id="Input" onChange={handleChange} className="text-text-white h-full w-full resize-none bg-background1 outline-none">
+          <input id="Input" onChange={handleChange} className="w-full h-full bg-transparent outline-none resize-none text-text-white">
           </input>
         </div>
-        <div className="flex relative w-1/3 justify-center">
-          <button onClick={handleClick} className="rounded-sm w-32 h-8 p-4 my-3 mx-1 border bg-button-color border-none text-sm flex items-center justify-center text-text-white text-center">
+        <div className="relative flex justify-center w-1/3">
+          <button onClick={handleClick} className="flex items-center justify-center w-32 h-8 p-4 mx-1 my-3 text-sm text-center border rounded-sm bg-button-color border-button-color hover:border-text-grey text-text-white">
             Google Search
           </button>
-          <button onClick={handleClick} className="rounded-sm w-40 h-8 p-4 my-3 mx-1 border bg-button-color border-none text-sm flex items-center justify-center text-text-white text-center">
+          <button onClick={handleClick} className="flex items-center justify-center w-40 h-8 p-4 mx-1 my-3 text-sm text-center border rounded-sm bg-button-color border-button-color hover:border-text-grey text-text-white">
             I'm Feeling Lucky
           </button>
-          <a href="/" id="GoogleApi"></a>
         </div>
       </div>
-      <div className="w-screen h-12 bg-background2 mt-auto py-4 px-8">
+      <div className="w-screen h-12 px-8 py-4 mt-auto bg-background2">
         <a href="/" className="text-text-grey hover:underline">
           Philippines
         </a>
       </div>
       <hr className="text-button-color"></hr>
-      <div className="flex flex-row justify-between w-screen h-12 bg-background2 py-4 px-8">
+      <div className="flex flex-row justify-between w-screen h-12 px-8 py-4 bg-background2">
         <div className="flex gap-4">
-          <ul className="flex relative justify-center gap-6">
+          <ul className="relative flex justify-center gap-6">
             <a href="/" className="text-sm text-text-grey hover:underline">About</a>
             <a href="/" className="text-sm text-text-grey hover:underline">Advertising</a>
             <a href="/" className="text-sm text-text-grey hover:underline">Business</a>
@@ -77,7 +76,7 @@ export default function App() {
           </ul>
         </div>
         <div className="flex gap-4">
-          <ul className="flex relative justify-center gap-6">
+          <ul className="relative flex justify-center gap-6">
             <a href="/" className="text-sm text-text-grey hover:underline">Privacy</a>
             <a href="/" className="text-sm text-text-grey hover:underline">Terms</a>
             <a href="/" className="text-sm text-text-grey hover:underline">Settings</a>
